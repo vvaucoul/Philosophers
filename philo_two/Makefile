@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: user42 <user42@student.42.fr>              +#+  +:+       +#+         #
+#    By: vvaucoul <vvaucoul@student.42.Fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/05 20:46:58 by user42            #+#    #+#              #
-#    Updated: 2021/01/10 15:01:03 by user42           ###   ########.fr        #
+#    Updated: 2022/10/28 18:21:34 by vvaucoul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,16 +51,16 @@ all:
 
 
 $(NAME):		$(OBJS)
-				@echo "$(YELLOW)\t- Compiling [$(NAME)]$(NOC)"
+				@printf "$(YELLOW)\t- Compiling [$(NAME)]$(NOC)\n"
 				@gcc ${CFLAGS} -o ${NAME} ${OBJS} ${LIBS}
-				@echo "$(GREEN)\t- Done...$(NOC)"
+				@printf "$(GREEN)\t- Done...$(NOC)\n"
 
 clean:
-				@echo "$(YELLOW)\t- Cleaning .o$(NOC)"
+				@printf "$(YELLOW)\t- Cleaning .o$(NOC)\n"
 				@$(RM) $(OBJS)
 
 fclean:			clean
-				@echo "$(YELLOW)\t- Deleting $(RED)[$(NAME)] $(NOC)"
+				@printf "$(YELLOW)\t- Deleting $(RED)[$(NAME)] $(NOC)\n"
 				@$(RM) $(NAME)
 
 re:				fclean all

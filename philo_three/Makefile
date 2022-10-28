@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: user42 <user42@student.42.fr>              +#+  +:+       +#+         #
+#    By: vvaucoul <vvaucoul@student.42.Fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/05 20:46:58 by user42            #+#    #+#              #
-#    Updated: 2021/01/10 17:14:53 by user42           ###   ########.fr        #
+#    Updated: 2022/10/28 18:21:26 by vvaucoul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ SRCS			=	srcs/main.c	\
 OBJS			= $(SRCS:.c=.o)
 CC				= gcc
 RM				= rm -f
-CFLAGS			= -g3 -I./include/ -I../utils/ #-Wall -Wextra -Werror
+CFLAGS			= -g3 -I./include/ -I../utils/ -Wall -Wextra -Werror
 LIBS			= -lpthread
 
 NAME			= philo_three
@@ -52,16 +52,16 @@ all:
 
 
 $(NAME):		$(OBJS)
-				@echo "$(YELLOW)\t- Compiling [$(NAME)]$(NOC)"
+				@printf "$(YELLOW)\t- Compiling [$(NAME)]$(NOC)\n"
 				@gcc ${CFLAGS} -o ${NAME} ${OBJS} ${LIBS}
-				@echo "$(GREEN)\t- Done...$(NOC)"
+				@printf "$(GREEN)\t- Done...$(NOC)\n"
 
 clean:
-				@echo "$(YELLOW)\t- Cleaning .o$(NOC)"
+				@printf "$(YELLOW)\t- Cleaning .o$(NOC)\n"
 				@$(RM) $(OBJS)
 
 fclean:			clean
-				@echo "$(YELLOW)\t- Deleting $(RED)[$(NAME)] $(NOC)"
+				@printf "$(YELLOW)\t- Deleting $(RED)[$(NAME)] $(NOC)\n"
 				@$(RM) $(NAME)
 
 re:				fclean all
